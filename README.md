@@ -22,14 +22,14 @@ Pré-requisitos
 Docker e Docker Compose instalados
 
 1. Clone o repositório
-git clone https://github.com/devantoniocode/minimundoApi.git
-cd /devantoniocode/minimundoApi
+ - git clone https://github.com/devantoniocode/minimundoApi.git
 
-2. Baixe a imagem do Docker Hub
-docker pull devantoniomarcos/minimundo_api:1.0
+3. Baixe a imagem do Docker Hub
+ - docker pull devantoniomarcos/minimundo_api:1.0
 
-3. Suba os containers com Docker Compose
-docker-compose up -d
+4. Suba os containers com Docker Compose
+ - no diretório cd /devantoniocode/minimundoApi rode o comando
+ - docker-compose up -d
 
 Este comando inicia:
 
@@ -38,43 +38,41 @@ Este comando inicia:
 ✅ Banco de dados MySQL na porta 3306
 
 4. Execute o script de setup
-./setup.sh
+ - ./setup.sh
 
 O script setup.sh executa automaticamente:
-
-composer install
-
-php artisan migrate
+ - composer install
+ - 
+ - php artisan migrate
 
 Configurações iniciais do ambiente
 
 5. Popule o banco de dados
-docker-compose exec api php artisan db:seed
+- docker-compose exec api php artisan db:seed
 
 6. Credenciais de acesso (após o seed)
-E-mail: ominimundo@email.com
-Senha: 123456
+ - E-mail: ominimundo@email.com
+ - Senha: 123456
 
 7. Executar testes unitários
-
-docker-compose exec api ./vendor/bin/phpunit
+ - docker-compose exec api ./vendor/bin/phpunit
 
 📌 Comandos úteis adicionais
 
 # Ver logs da API
-docker-compose logs -f api
+ - docker-compose logs -f api
 
 # Acessar o container da API
-docker-compose exec api bash
+ - docker-compose exec api bash
 
 # Parar os containers
-docker-compose down
+ - docker-compose down
 
 # Reiniciar os containers
-docker-compose restart
+ - docker-compose restart
 
 # Ver status dos containers
-docker-compose ps
+ - docker-compose ps
 
 🌐 Acessar a API
-http://localhost:8000
+ - http://localhost:8000
