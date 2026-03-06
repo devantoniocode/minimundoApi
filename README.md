@@ -24,10 +24,10 @@ Docker e Docker Compose instalados
 1. Clone o repositório
  - git clone https://github.com/devantoniocode/minimundoApi.git
 
-3. Baixe a imagem do Docker Hub
+2. Baixe a imagem do Docker Hub
  - docker pull devantoniomarcos/minimundo_api:1.0
 
-4. Suba os containers com Docker Compose
+3. Suba os containers com Docker Compose
  - no diretório cd /devantoniocode/minimundoApi rode o comando
  - docker-compose up -d
 
