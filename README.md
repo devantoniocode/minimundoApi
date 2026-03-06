@@ -51,19 +51,11 @@ Configurações iniciais do ambiente
 5. Popule o banco de dados
 docker-compose exec api php artisan db:seed
 
-6. Verifique se o usuário admin foi criado
-docker-compose exec api php artisan tinker
-DB::table('users')->where('email', 'ominimundo@email.com')->first();
-exit;
-Ou acesse o banco diretamente:
-docker-compose exec db mysql -u root -p -e "SELECT * FROM ominimundo.users;"
-Senha do banco: root
-
-7. Credenciais de acesso
-E-mail: (verificar na tabela users após seed)
+6. Credenciais de acesso (após o seed)
+E-mail: ominimundo@email.com
 Senha: 123456
 
-8. Executar testes unitários
+7. Executar testes unitários
 
 docker-compose exec api ./vendor/bin/phpunit
 
