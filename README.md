@@ -30,6 +30,10 @@ Docker e Docker Compose instalados
 3. Suba os containers com Docker Compose
  - no diretório cd /devantoniocode/minimundoApi rode o comando
  - docker-compose up -d
+ 
+ # Após este comando, caso apresente este erro "...failed to bind host port for 0.0.0.0:3306:172.18.0.2:3306/tcp: address already in use"
+  Liste o serviço que está usando a porta 3306 e pare o processo. Feito isto, repita o comando:
+  - docker-compose up -d
 
 Este comando inicia:
 
@@ -37,25 +41,22 @@ Este comando inicia:
 
 ✅ Banco de dados MySQL na porta 3306
 
-4. Execute o script de setup
+4. Execute o script de setup **no diretório cd /devantoniocode/minimundoApi**
  - ./setup.sh
 
 O script setup.sh executa automaticamente:
  - composer install
- - 
  - php artisan migrate
+ - ./vendor/bin/phpunit
 
 Configurações iniciais do ambiente
 
 5. Popule o banco de dados
 - docker-compose exec api php artisan db:seed
 
-6. Credenciais de acesso (após o seed)
+6. Credenciais de acesso **após o seed**
  - E-mail: ominimundo@email.com
  - Senha: 123456
-
-7. Executar testes unitários
- - docker-compose exec api ./vendor/bin/phpunit
 
 📌 Comandos úteis adicionais
 
